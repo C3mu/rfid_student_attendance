@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATALOG>
+  <CD>
+    <TITLE>Empire Burlesque</TITLE>
+    <NAME>Bob Dylan</NAME>
+    <COURSE>USA</COURSE>
+    <COMPANY>Columbia</COMPANY>
+    <PHONE>10.90</PHONE>
+    <TIME>1985</TIME>
+  </CD>
+  <CD>
+    <TITLE>Hide your heart</TITLE>
+    <NAME>Bonnie Tyler</NAME>
+    <COURSE>UK</COURSE>
+    <COMPANY>CBS Records</COMPANY>
+    <PHONE>9.90</PHONE>
+    <TIME>1988</TIME>
+  </CD>
+  <CD>
+    <TITLE>Greatest Hits</TITLE>
+    <NAME>Dolly Parton</NAME>
+    <COURSE>USA</COURSE>
+    <COMPANY>RCA</COMPANY>
+    <PHONE>9.90</PHONE>
+    <TIME>1982</TIME>
+  </CD>
+  <CD>
+    <TITLE>Still got the blues</TITLE>
+    <NAME>Gary Moore</NAME>
+    <COURSE>UK</COURSE>
+    <COMPANY>Virgin records</COMPANY>
+    <PHONE>10.20</PHONE>
+    <TIME>1990</TIME>
+  </CD>
+  <CD>
+    <TITLE>Eros</TITLE>
+    <NAME>Eros Ramazzotti</NAME>
+    <COURSE>EU</COURSE>
+    <COMPANY>BMG</COMPANY>
+    <PHONE>9.90</PHONE>
+    <TIME>1997</TIME>
+  </CD>
+  <CD>
+    <TITLE>One night only</TITLE>
+    <NAME>Bee Gees</NAME>
+    <COURSE>UK</COURSE>
+    <COMPANY>Polydor</COMPANY>
+    <PHONE>10.90</PHONE>
+    <TIME>1998</TIME>
+  </CD>
+  <CD>
+    <TITLE>Sylvias Mother</TITLE>
+    <NAME>Dr.Hook</NAME>
+    <COURSE>UK</COURSE>
+    <COMPANY>CBS</COMPANY>
+    <PHONE>8.10</PHONE>
+    <TIME>1973</TIME>
+  </CD>
+  <CD>
+    <TITLE>Maggie May</TITLE>
+    <NAME>Rod Stewart</NAME>
+    <COURSE>UK</COURSE>
+    <COMPANY>Pickwick</COMPANY>
+    <PHONE>8.50</PHONE>
+    <TIME>1990</TIME>
+  </CD>
+  <CD>
+    <TITLE>Romanza</TITLE>
+    <NAME>Andrea Bocelli</NAME>
+    <COURSE>EU</COURSE>
+    <COMPANY>Polydor</COMPANY>
+    <PHONE>10.80</PHONE>
+    <TIME>1996</TIME>
+  </CD>
+  <CD>
+    <TITLE>When a man loves a woman</TITLE>
+    <NAME>Percy Sledge</NAME>
+    <COURSE>USA</COURSE>
+    <COMPANY>Atlantic</COMPANY>
+    <PHONE>8.70</PHONE>
+    <TIME>1987</TIME>
+  </CD>
+  <CD>
+    <TITLE>Black angel</TITLE>
+    <NAME>Savage Rose</NAME>
+    <COURSE>EU</COURSE>
+    <COMPANY>Mega</COMPANY>
+    <PHONE>10.90</PHONE>
+    <TIME>1995</TIME>
+  </CD>
+  <CD>
+    <TITLE>1999 Grammy Nominees</TITLE>
+    <NAME>Many</NAME>
+    <COURSE>USA</COURSE>
+    <COMPANY>Grammy</COMPANY>
+    <PHONE>10.20</PHONE>
+    <TIME>1999</TIME>
+  </CD>
+  <CD>
+    <TITLE>For the good times</TITLE>
+    <NAME>Kenny Rogers</NAME>
+    <COURSE>UK</COURSE>
+    <COMPANY>Mucik Master</COMPANY>
+    <PHONE>8.70</PHONE>
+    <TIME>1995</TIME>
+  </CD>
+  <CD>
+    <TITLE>Big Willie style</TITLE>
+    <NAME>Will Smith</NAME>
+    <COURSE>USA</COURSE>
+    <COMPANY>Columbia</COMPANY>
+    <PHONE>9.90</PHONE>
+    <TIME>1997</TIME>
+  </CD>
+  <CD>
+    <TITLE>Tupelo Honey</TITLE>
+    <NAME>Van Morrison</NAME>
+    <COURSE>UK</COURSE>
+    <COMPANY>Polydor</COMPANY>
+    <PHONE>8.20</PHONE>
+    <TIME>1971</TIME>
+  </CD>
+  <CD>
+    <TITLE>Soulsville</TITLE>
+    <NAME>Jorn Hoel</NAME>
+    <COURSE>Norway</COURSE>
+    <COMPANY>WEA</COMPANY>
+    <PHONE>7.90</PHONE>
+    <TIME>1996</TIME>
+  </CD>
+  <CD>
+    <TITLE>The very best of</TITLE>
+    <NAME>Cat Stevens</NAME>
+    <COURSE>UK</COURSE>
+    <COMPANY>Island</COMPANY>
+    <PHONE>8.90</PHONE>
+    <TIME>1990</TIME>
+  </CD>
+  <CD>
+    <TITLE>Stop</TITLE>
+    <NAME>Sam Brown</NAME>
+    <COURSE>UK</COURSE>
+    <COMPANY>A and M</COMPANY>
+    <PHONE>8.90</PHONE>
+    <TIME>1988</TIME>
+  </CD>
+  <CD>
+    <TITLE>Bridge of Spies</TITLE>
+    <NAME>T'Pau</NAME>
+    <COURSE>UK</COURSE>
+    <COMPANY>Siren</COMPANY>
+    <PHONE>7.90</PHONE>
+    <TIME>1987</TIME>
+  </CD>
+  <CD>
+    <TITLE>Private Dancer</TITLE>
+    <NAME>Tina Turner</NAME>
+    <COURSE>UK</COURSE>
+    <COMPANY>Capitol</COMPANY>
+    <PHONE>8.90</PHONE>
+    <TIME>1983</TIME>
+  </CD>
+  <CD>
+    <TITLE>Midt om natten</TITLE>
+    <NAME>Kim Larsen</NAME>
+    <COURSE>EU</COURSE>
+    <COMPANY>Medley</COMPANY>
+    <PHONE>7.80</PHONE>
+    <TIME>1983</TIME>
+  </CD>
+  <CD>
+    <TITLE>Pavarotti Gala Concert</TITLE>
+    <NAME>Luciano Pavarotti</NAME>
+    <COURSE>UK</COURSE>
+    <COMPANY>DECCA</COMPANY>
+    <PHONE>9.90</PHONE>
+    <TIME>1991</TIME>
+  </CD>
+  <CD>
+    <TITLE>The dock of the bay</TITLE>
+    <NAME>Otis Redding</NAME>
+    <COURSE>USA</COURSE>
+    <COMPANY>Stax Records</COMPANY>
+    <PHONE>7.90</PHONE>
+    <TIME>1968</TIME>
+  </CD>
+  <CD>
+    <TITLE>Picture book</TITLE>
+    <NAME>Simply Red</NAME>
+    <COURSE>EU</COURSE>
+    <COMPANY>Elektra</COMPANY>
+    <PHONE>7.20</PHONE>
+    <TIME>1985</TIME>
+  </CD>
+  <CD>
+    <TITLE>Red</TITLE>
+    <NAME>The Communards</NAME>
+    <COURSE>UK</COURSE>
+    <COMPANY>London</COMPANY>
+    <PHONE>7.80</PHONE>
+    <TIME>1987</TIME>
+  </CD>
+  <CD>
+    <TITLE>Unchain my heart</TITLE>
+    <NAME>Joe Cocker</NAME>
+    <COURSE>USA</COURSE>
+    <COMPANY>EMI</COMPANY>
+    <PHONE>8.20</PHONE>
+    <TIME>1987</TIME>
+  </CD>
+</CATALOG>

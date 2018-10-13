@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://www.w3schools.com/js/tryit.asp?filename=tryjs_ajax_xml2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head><body contenteditable="false">
+
+<h1>The XMLHttpRequest Object</h1>
+
+<button type="button" onclick="loadDoc()">Get my CD collection</button>
+<button type="button" onclick="data = &#39;cd_ccatalog.xml&#39;">set data</button>
+<button type="button" onclick="data = &#39;cd_catalog.xml&#39;">reset data</button>
+<br><br>
+<table id="demo"><tbody><tr><th>Artist</th><th>Title</th><th>Country</th></tr><tr><td>Bob Dylan</td><td>Empire Burlesque</td><td>USA</td></tr><tr><td>Bonnie Tyler</td><td>Hide your heart</td><td>UK</td></tr><tr><td>Dolly Parton</td><td>Greatest Hits</td><td>USA</td></tr><tr><td>Gary Moore</td><td>Still got the blues</td><td>UK</td></tr><tr><td>Eros Ramazzotti</td><td>Eros</td><td>EU</td></tr><tr><td>Bee Gees</td><td>One night only</td><td>UK</td></tr><tr><td>Dr.Hook</td><td>Sylvias Mother</td><td>UK</td></tr><tr><td>Rod Stewart</td><td>Maggie May</td><td>UK</td></tr><tr><td>Andrea Bocelli</td><td>Romanza</td><td>EU</td></tr><tr><td>Percy Sledge</td><td>When a man loves a woman</td><td>USA</td></tr><tr><td>Savage Rose</td><td>Black angel</td><td>EU</td></tr><tr><td>Many</td><td>1999 Grammy Nominees</td><td>USA</td></tr><tr><td>Kenny Rogers</td><td>For the good times</td><td>UK</td></tr><tr><td>Will Smith</td><td>Big Willie style</td><td>USA</td></tr><tr><td>Van Morrison</td><td>Tupelo Honey</td><td>UK</td></tr><tr><td>Jorn Hoel</td><td>Soulsville</td><td>Norway</td></tr><tr><td>Cat Stevens</td><td>The very best of</td><td>UK</td></tr><tr><td>Sam Brown</td><td>Stop</td><td>UK</td></tr><tr><td>T'Pau</td><td>Bridge of Spies</td><td>UK</td></tr><tr><td>Tina Turner</td><td>Private Dancer</td><td>UK</td></tr><tr><td>Kim Larsen</td><td>Midt om natten</td><td>EU</td></tr><tr><td>Luciano Pavarotti</td><td>Pavarotti Gala Concert</td><td>UK</td></tr><tr><td>Otis Redding</td><td>The dock of the bay</td><td>USA</td></tr><tr><td>Simply Red</td><td>Picture book</td><td>EU</td></tr><tr><td>The Communards</td><td>Red</td><td>UK</td></tr><tr><td>Joe Cocker</td><td>Unchain my heart</td><td>USA</td></tr><tr><td>Bob Dylan</td><td>Empire Burlesque</td><td>USA</td></tr><tr><td>Bonnie Tyler</td><td>Hide your heart</td><td>UK</td></tr><tr><td>Dolly Parton</td><td>Greatest Hits</td><td>USA</td></tr><tr><td>Gary Moore</td><td>Still got the blues</td><td>UK</td></tr><tr><td>Eros Ramazzotti</td><td>Eros</td><td>EU</td></tr><tr><td>Bee Gees</td><td>One night only</td><td>UK</td></tr><tr><td>Dr.Hook</td><td>Sylvias Mother</td><td>UK</td></tr><tr><td>Rod Stewart</td><td>Maggie May</td><td>UK</td></tr><tr><td>Andrea Bocelli</td><td>Romanza</td><td>EU</td></tr><tr><td>Percy Sledge</td><td>When a man loves a woman</td><td>USA</td></tr><tr><td>Savage Rose</td><td>Black angel</td><td>EU</td></tr><tr><td>Many</td><td>1999 Grammy Nominees</td><td>USA</td></tr><tr><td>Kenny Rogers</td><td>For the good times</td><td>UK</td></tr><tr><td>Will Smith</td><td>Big Willie style</td><td>USA</td></tr><tr><td>Van Morrison</td><td>Tupelo Honey</td><td>UK</td></tr><tr><td>Jorn Hoel</td><td>Soulsville</td><td>Norway</td></tr><tr><td>Cat Stevens</td><td>The very best of</td><td>UK</td></tr><tr><td>Sam Brown</td><td>Stop</td><td>UK</td></tr><tr><td>T'Pau</td><td>Bridge of Spies</td><td>UK</td></tr><tr><td>Tina Turner</td><td>Private Dancer</td><td>UK</td></tr><tr><td>Kim Larsen</td><td>Midt om natten</td><td>EU</td></tr><tr><td>Luciano Pavarotti</td><td>Pavarotti Gala Concert</td><td>UK</td></tr><tr><td>Otis Redding</td><td>The dock of the bay</td><td>USA</td></tr><tr><td>Simply Red</td><td>Picture book</td><td>EU</td></tr><tr><td>The Communards</td><td>Red</td><td>UK</td></tr><tr><td>Joe Cocker</td><td>Unchain my heart</td><td>USA</td></tr><tr><td>Bob Dylan</td><td>Empire Burlesque</td><td>USA</td></tr><tr><td>Bonnie Tyler</td><td>Hide your heart</td><td>UK</td></tr><tr><td>Dolly Parton</td><td>Greatest Hits</td><td>USA</td></tr><tr><td>Gary Moore</td><td>Still got the blues</td><td>UK</td></tr><tr><td>Eros Ramazzotti</td><td>Eros</td><td>EU</td></tr><tr><td>Bee Gees</td><td>One night only</td><td>UK</td></tr><tr><td>Dr.Hook</td><td>Sylvias Mother</td><td>UK</td></tr><tr><td>Rod Stewart</td><td>Maggie May</td><td>UK</td></tr><tr><td>Andrea Bocelli</td><td>Romanza</td><td>EU</td></tr><tr><td>Percy Sledge</td><td>When a man loves a woman</td><td>USA</td></tr><tr><td>Savage Rose</td><td>Black angel</td><td>EU</td></tr><tr><td>Many</td><td>1999 Grammy Nominees</td><td>USA</td></tr><tr><td>Kenny Rogers</td><td>For the good times</td><td>UK</td></tr><tr><td>Will Smith</td><td>Big Willie style</td><td>USA</td></tr><tr><td>Van Morrison</td><td>Tupelo Honey</td><td>UK</td></tr><tr><td>Jorn Hoel</td><td>Soulsville</td><td>Norway</td></tr><tr><td>Cat Stevens</td><td>The very best of</td><td>UK</td></tr><tr><td>Sam Brown</td><td>Stop</td><td>UK</td></tr><tr><td>T'Pau</td><td>Bridge of Spies</td><td>UK</td></tr><tr><td>Tina Turner</td><td>Private Dancer</td><td>UK</td></tr><tr><td>Kim Larsen</td><td>Midt om natten</td><td>EU</td></tr><tr><td>Luciano Pavarotti</td><td>Pavarotti Gala Concert</td><td>UK</td></tr><tr><td>Otis Redding</td><td>The dock of the bay</td><td>USA</td></tr><tr><td>Simply Red</td><td>Picture book</td><td>EU</td></tr><tr><td>The Communards</td><td>Red</td><td>UK</td></tr><tr><td>Joe Cocker</td><td>Unchain my heart</td><td>USA</td></tr><tr><td>Bob Dylan</td><td>Empire Burlesque</td><td>USA</td></tr><tr><td>Bonnie Tyler</td><td>Hide your heart</td><td>UK</td></tr><tr><td>Dolly Parton</td><td>Greatest Hits</td><td>USA</td></tr><tr><td>Gary Moore</td><td>Still got the blues</td><td>UK</td></tr><tr><td>Eros Ramazzotti</td><td>Eros</td><td>EU</td></tr><tr><td>Bee Gees</td><td>One night only</td><td>UK</td></tr><tr><td>Dr.Hook</td><td>Sylvias Mother</td><td>UK</td></tr><tr><td>Rod Stewart</td><td>Maggie May</td><td>UK</td></tr><tr><td>Andrea Bocelli</td><td>Romanza</td><td>EU</td></tr><tr><td>Percy Sledge</td><td>When a man loves a woman</td><td>USA</td></tr><tr><td>Savage Rose</td><td>Black angel</td><td>EU</td></tr><tr><td>Many</td><td>1999 Grammy Nominees</td><td>USA</td></tr><tr><td>Kenny Rogers</td><td>For the good times</td><td>UK</td></tr><tr><td>Will Smith</td><td>Big Willie style</td><td>USA</td></tr><tr><td>Van Morrison</td><td>Tupelo Honey</td><td>UK</td></tr><tr><td>Jorn Hoel</td><td>Soulsville</td><td>Norway</td></tr><tr><td>Cat Stevens</td><td>The very best of</td><td>UK</td></tr><tr><td>Sam Brown</td><td>Stop</td><td>UK</td></tr><tr><td>T'Pau</td><td>Bridge of Spies</td><td>UK</td></tr><tr><td>Tina Turner</td><td>Private Dancer</td><td>UK</td></tr><tr><td>Kim Larsen</td><td>Midt om natten</td><td>EU</td></tr><tr><td>Luciano Pavarotti</td><td>Pavarotti Gala Concert</td><td>UK</td></tr><tr><td>Otis Redding</td><td>The dock of the bay</td><td>USA</td></tr><tr><td>Simply Red</td><td>Picture book</td><td>EU</td></tr><tr><td>The Communards</td><td>Red</td><td>UK</td></tr><tr><td>Joe Cocker</td><td>Unchain my heart</td><td>USA</td></tr></tbody></table>
+
+<script>
+var string="<tr><th>Artist</th><th>Title</th><th>Country</th></tr>";
+var data = "cd_catalog.xml";
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", data, true);
+  xhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  //var table="<tr><th>Artist</th><th>Title</th><th>Country</th></tr>";
+  var x = xmlDoc.getElementsByTagName("CD");
+  for (i = 0; i <x.length; i++) { 
+    string += "<tr><td>" +
+    //table += "<tr><td>" +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = string;
+}
+</script>
+
+
+
+</body></html>

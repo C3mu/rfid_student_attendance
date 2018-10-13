@@ -1,0 +1,87 @@
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+<meta http - equiv = 'Content-Type' content = 'text/html; charset = utf-8'> 
+<TITLE> STUDENT ATTENDANCE </TITLE> 
+<link href = "style.css" rel = "stylesheet"> 
+<link rel="shortcut icon" href="icon.png"/>
+<script>
+function checkdata(){
+	data1 = document.getElementById('ssid').value;
+	data2 = document.getElementById('pass').value;
+	if(data1 == ""){
+	document.getElementById("statup").innerHTML = "No ssid data"; 
+	return;
+	}
+	if(data2.length < 8){
+	document.getElementById("statup").innerHTML = "pass must lengther than 7"; 
+	return;
+	}
+	alert("data send & Sever was disconnected !");
+	request("RECONNECT"+"Ssid="+data1+"&Pass="+data2+"#");
+}
+function request(data){
+ document.getElementById("statup").innerHTML = "send data"; 
+ var xhttp = new XMLHttpRequest(); 
+ xhttp.onreadystatechange = function() {
+ if (this.readyState == 4 && this.status == 204){
+	document.getElementById("statup").innerHTML = this.getResponseHeader("Statup");
+ } 
+ 
+if (this.readyState == 4 && this.status == 200) { 
+	document.getElementById("statup").innerHTML = "Load newdata";
+	myFunction(this);  
+ }
+ }; 
+ xhttp.open("GET","/setup="+data,true); 
+ xhttp.send(); 
+} 
+
+function myFunction(xml) { 
+ var show = "";
+ var i; 
+ var xmlDoc = xml.responseXML; 
+ var x = xmlDoc.getElementsByTagName("CD"); 
+ for (i = 0; i <x.length; i++) { 
+ var day = x[i].getElementsByTagName("D")[0].childNodes[0].nodeValue;
+ show = "<a class = 'sml' href='/download="+day+"' download>"+day+"</a>" + show; 
+ }
+ document.getElementById("menu").innerHTML = show; 
+ } 
+</script>
+</head> 
+<body> 
+<div> 
+<p>
+<br/> STUDENT ATTENDANCE <br/><br/> 
+</p>
+<HR/>  
+<a href='/home'> HOME </a>  
+<a href='/write'> WRITE </a>  
+<a href='/setup' class = 'hightlight'> SETUP </a>  
+<HR/> 
+<strong>Statup: </strong><h id = "statup">stand by</h> </br> 
+<br/><strong> change WIFI (SSID) and PASSWORD </strong> <br/>
+
+<br/> &emsp;&emsp;&emsp;  SSID <input type='text' id='ssid' size='20'value=''/>
+<HR class = 'mini'/>
+&emsp;&emsp;&emsp;PASS <input type='password' id='pass' size='20'/><br/><br/>
+<EM> CAUTION : this aslo change IP address, plese reconnect in new IP and WIFI</EM>
+<input type='submit' value = ' OK ' class = 'button' onclick='checkdata()'><br/>
+&emsp;&emsp;&emsp;<a href='/scan' class = 'buton'> Scan WIFI </a><br/>
+<HR/>
+
+<strong>DOWNLOAD DATA:</strong></br> 
+ &emsp;&emsp;&emsp;Chose a day : <button type="button" onclick="request('FuLLLiStDaTa')"> CHECK_NEW_DATA </button> 
+<h5 id="menu"></h5>
+<HR/>
+ <p class = 'end'> 
+ <br/> 
+ &emsp;Website design & code by Cemu<br/> 
+  &emsp;Copyright 2017-Infinity <br/>
+ &emsp;&emsp;chac ko ai doc nen ... thoi ke
+ <br/><br/> 
+ </p> 
+ </div> 
+ </body> 
+ </html>

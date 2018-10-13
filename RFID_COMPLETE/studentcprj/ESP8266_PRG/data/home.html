@@ -1,0 +1,122 @@
+ <!DOCTYPE HTML> 
+ <html> 
+ <head> 
+ <meta http - equiv = 'Content-Type' content = 'text / html; charset = utf-8'> 
+ <TITLE> STUDENT ATTENDANCE </TITLE> 
+ <link href = "style.css" rel = "stylesheet"> 
+ <link rel="shortcut icon" href="icon.png"/>
+ </head> 
+ <body onload="startTime()">
+ <div> 
+ <p> 
+ <br/> STUDENT ATTENDANCE <br/><br/> 
+ </p>
+ <HR/>  
+ <a href='/home' class = 'hightlight'> HOME </a>  
+ <a href='/write'> WRITE </a>  
+ <a href='/setup'> SETUP </a>  
+ <HR/> 
+ <h1>STUDENT PRESENCE</h1> 
+ <button type="button" onclick="reset(false)"> CHECK_NEW_DATA </button> 
+ <button type="button" onclick="reset(true)"> GET_DAY_DATA </button> 
+ <h>&emsp;&emsp; Time: <h id="time"> </h> </h> 
+ <br/>
+ <center><table id="tablei"></table></center> 
+Startus : <h5 id="statup"></h5>
+ <script> 
+ 
+ function startTime() {
+    var today = new Date();
+    var hour = today.getHours();
+    var minute = today.getMinutes();
+    var seconds = today.getSeconds();
+    minute = checkTime(minute);
+    seconds = checkTime(seconds);
+    document.getElementById('time').innerHTML = hour + ":" + minute + ":" + seconds;
+    setTimeout(startTime, 1000);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+ //  window.onbeforeunload = function () {
+ //       return 'Các thay đổi chưa lưu của bạn sẽ bị.';
+ //   }
+ var table="<tr><td>000</td><td>..........Cemu..........</td><td>000</td><td>0000000000</td><td>0:37:33</td></tr>"; 
+ var num = 0; 
+ var y;
+ setTimeout(loadDoc(false),100); 
+ setTimeout(test(),1000); 
+ function reset(type1){
+ document.getElementById("statup").innerHTML = "Reset."; 
+ console.log("Reset");
+ clearTimeout(y);
+ loadDoc(type1);
+ }
+ function test(){
+ var show = "<tr><th>NUM</th><th>NAME</th><th>COURSE</th><th>PHONE</th><th>TIME</th></tr>" + table; 
+ document.getElementById("tablei").innerHTML = show; 
+ }
+ function loadDoc(type) { 
+  document.getElementById("statup").innerHTML = "waiting data ..."; 
+  console.log("wait data, all day data =" + type);
+ var xhttp = new XMLHttpRequest(); 
+ y = setTimeout(function(){reset(false);}, 60000);//auto time out if sever not response
+ xhttp.onreadystatechange = function() {
+ if (this.readyState == 4 && this.status == 204){
+	document.getElementById("statup").innerHTML = "no new data return";
+	console.log("204_no new data return");
+	reset();
+ } 
+if (this.readyState == 4 && this.status == 200) { 
+	document.getElementById("statup").innerHTML = "Loading newdata";
+	console.log("Loading newdata");
+	myFunction(this);  
+	reset();
+ }
+if (this.readyState == 4 && this.status == 403){
+	 clearTimeout(y);
+	 document.getElementById("statup").innerHTML = "SEVER_DISCONNECTED";
+	 console.log("SEVER_DISCONNECTED");
+	 alert("CAUTION SEVER DISCONNECTED && admin changed && cant load newdata");
+	// var retVal = confirm("Do you want to refresh ?");
+	// if (retVal){
+	// location.reload(true);
+	// }
+ }
+ }; 
+ if(type){
+	xhttp.open("GET","GetDayData",true); 
+ }else{
+	xhttp.open("GET","Checkdata",true); 
+ }
+ xhttp.send(); 
+ } 
+ function myFunction(xml) { 
+ var i; 
+ var xmlDoc = xml.responseXML; 
+ var x = xmlDoc.getElementsByTagName("CD"); 
+ for (i = 0; i <x.length; i++) {  
+ num += 1; 
+ table = "<tr><td>" + num +"</td><td>" + 
+ x[i].getElementsByTagName("NAME")[0].childNodes[0].nodeValue + "</td><td>" + 
+ x[i].getElementsByTagName("COURSE")[0].childNodes[0].nodeValue + "</td><td>" + 
+ x[i].getElementsByTagName("PHONE")[0].childNodes[0].nodeValue + "</td><td>" + 
+ x[i].getElementsByTagName("TIME")[0].childNodes[0].nodeValue + "</td></tr>" + table; 
+ }
+ 
+ var show = "<tr><th>NUM</th><th>NAME</th><th>COURSE</th><th>PHONE</th><th>TIME</th></tr>" + table; 
+ document.getElementById("tablei").innerHTML = show; 
+ } 
+ </script>
+ <HR/> 
+ <br/> 
+ <p class = 'end'> 
+ <br/> 
+ &emsp;All design & code by Cemu<br/> 
+ &emsp;Copyright 2017-[∞] 
+ <br/><br/> 
+ </p> 
+ </div> 
+ </body> 
+ </html>

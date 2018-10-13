@@ -1,0 +1,130 @@
+ <!DOCTYPE HTML> 
+ <html> 
+ <head> 
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <TITLE> STUDENT ATTENDANCE </TITLE> 
+ <link href = "style.css" rel = "stylesheet"> 
+ <link rel="shortcut icon" href="icon.png"/>
+ </head> 
+ <body onload="startTime()">
+ <div> 
+ <p> 
+ <br/> STUDENT ATTENDANCE <br/><br/> 
+ </p>
+ <HR/>  
+ <a href='/home' class = 'hightlight'> HOME </a>  
+ <a href='/write'> WRITE </a>  
+ <a href='/setup'> SETUP </a>  
+ <HR/> 
+ <h1>STUDENT PRESENCE</h1> 
+ <button type="button" onclick="reset('Checkdata')"> CHECK_NEW_DATA </button> 
+ <button type="button" onclick="reset('GetDayData')"> GET_DAY_DATA </button>
+&emsp;table size  
+ <button style="margin-left:2px" type="button" onclick="si1()">+</button> 
+ <button style="margin-left:2px" type="button" onclick="si2()">-</button> 
+ <h>&emsp; Time: <h id="time"> </h> </h> 
+ <br/>
+ <center><table id="tablei"></table></center> 
+Startus : <h5 id="statup"></h5>
+<script> 
+var show;
+var s=1;
+var sizelist = ["50%","100%","200%","300%","400%","500%"];
+var table="<tr><td> </td><td> </td><td> </td><td> </td><td> </td></tr>"; 
+var num = 0; 
+var y;
+test(); 
+setTimeout(loadDoc("Checkdata"),100); 
+
+function si1() {if(s<5){s+=1;}si();}
+function si2() {if(s>0){s-=1;}si();}
+function si() {	 document.getElementById("tablei").style.fontSize = sizelist[s];}
+
+function startTime() {
+    var today = new Date();
+    var hour = today.getHours();
+    var minute = today.getMinutes();
+    var seconds = today.getSeconds();
+    minute = checkTime(minute);
+    seconds = checkTime(seconds);
+    document.getElementById('time').innerHTML = hour + ":" + minute + ":" + seconds;
+    setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};
+    return i;
+}
+
+ function reset(datas){
+ document.getElementById("statup").innerHTML = "Reset"; 
+ clearTimeout(y);
+ loadDoc(datas);
+ }
+ 
+ function test(){
+ show = "<tr><th>NUM</th><th>NAME</th><th>COURSE</th><th>PHONE</th><th>TIME</th></tr>" + table; 
+ document.getElementById("tablei").innerHTML = show; 
+ }
+ 
+ function loadDoc(data) { 
+  document.getElementById("statup").innerHTML = "waiting data ..."; 
+ var xhttp = new XMLHttpRequest(); 
+ y = setTimeout(function(){reset('Checkdata');}, 60000);
+ xhttp.onreadystatechange = function() {
+ if (this.readyState == 4 && this.status == 204){
+	document.getElementById("statup").innerHTML = this.getResponseHeader("Statup");
+	reset('Checkdata');
+ } 
+ 
+ if (this.readyState == 4 && this.status == 104){
+	document.getElementById("statup").innerHTML = "Sever_disconnected";
+ } 
+ 
+if (this.readyState == 4 && this.status == 200) { 
+	setTimeout(function(){ document.getElementById("statup").innerHTML = "Loading newdata";},500);
+	myFunction(this);  
+	reset('Checkdata');
+ }
+ 
+ if (this.readyState == 4 && this.status == 201) { 
+	setTimeout(function(){ document.getElementById("statup").innerHTML = "Loading daydata";},500);
+	num = 0;
+	table="<tr><td> </td><td> </td><td> </td><td> </td><td> </td></tr>"; 
+    myFunction(this);
+	test();
+ }
+ 
+ }; 
+ xhttp.open("GET","/home="+data,true); 
+ xhttp.send(); 
+ }
+ 
+ function myFunction(xml) { 
+ var i; 
+ var xmlDoc = xml.responseXML; 
+ var x = xmlDoc.getElementsByTagName("CD"); 
+ for (i = 0; i <x.length; i++) {  
+ num += 1; 
+ table = "<tr><td>" + num +"</td><td>" + 
+ x[i].getElementsByTagName("NAME")[0].childNodes[0].nodeValue + "</td><td>" + 
+ x[i].getElementsByTagName("COURSE")[0].childNodes[0].nodeValue + "</td><td>" + 
+ x[i].getElementsByTagName("PHONE")[0].childNodes[0].nodeValue + "</td><td>" + 
+ x[i].getElementsByTagName("TIME")[0].childNodes[0].nodeValue + "</td></tr>" + table; 
+ }
+ show = "<tr><th>NUM</th><th>NAME</th><th>COURSE</th><th>PHONE</th><th>TIME</th></tr>" + table; 
+ document.getElementById("tablei").innerHTML = show; 
+ } 
+ </script>
+ <HR/> 
+ <br/> 
+ <p class = 'end'> 
+ <br/> 
+ &emsp;All design & code by Cemu<br/> 
+ &emsp;Copyright 2017-Infinity 
+ &emsp;translate by Google :-D IDK if it wrong ...
+ <br/><br/> 
+ </p> 
+ </div> 
+ </body> 
+ </html>

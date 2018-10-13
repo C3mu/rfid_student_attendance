@@ -1,0 +1,41 @@
+<HR/> 
+<a href='/home' class = 'hightlight'> HOME </a> 
+<a href='/write' > WRITE </a> 
+<a href='/read'> READ </a> 
+<a href='/setup' > SETUP </a> 
+<HR/>
+<h1>STUDENT PRESENCE</h1>
+<h4 id=\"time\"></h4>
+<button type=\"button\" onclick=\"loadDoc()\">CHECK</button>
+<center><table id=\"tablei\"></table></center>
+<script>"+ xd + 
+var table=\"\";
+var num = 0;
+setInterval(loadDoc,5000);
+document.getElementById(\"time\").innerHTML = Date();
+function loadDoc() {
+ var xhttp = new XMLHttpRequest();
+ xhttp.onreadystatechange = function() {
+   if (this.readyState == 4 && this.status == 200) {
+     myFunction(this);
+   }
+ };
+ xhttp.open(\"GET\", \"data.xml\", true);
+ xhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var x = xmlDoc.getElementsByTagName(\"CD\");
+  for (i = 0; i <x.length; i++) { 
+	num += 1;
+    table = \"<tr><td>\" + num +\"</td><td>\" +
+    x[i].getElementsByTagName(\"NAME\")[0].childNodes[0].nodeValue + \"</td><td>\" +
+    x[i].getElementsByTagName(\"COURSE\")[0].childNodes[0].nodeValue + \"</td><td>\" +
+	x[i].getElementsByTagName(\"PHONE\")[0].childNodes[0].nodeValue + \"</td><td>\" +
+    x[i].getElementsByTagName(\"TIME\")[0].childNodes[0].nodeValue + \"</td></tr>\" + table;
+  }
+  var show = \"<tr><th>SE</th><th>NAME</th><th>COURSE</th><th>PHONE</th><th>TIME</th></tr>\" + table;
+  document.getElementById(\"tablei\").innerHTML = show;
+}
+</script>

@@ -1,0 +1,140 @@
+ <!DOCTYPE HTML> 
+ <html> 
+ <head> 
+ <meta http - equiv = 'Content-Type' content = 'text / html; charset = utf-8'> 
+ <TITLE> STUDENT ATTENDANCE </TITLE> 
+ <link href = "style.css" rel = "stylesheet"> 
+ <link rel="shortcut icon" href="icon.png"/>
+ <script> 
+
+ 
+ var atypical = true;
+ function changeatypical(apc){
+	atypical = apc;
+ }
+ function lockcard(){
+ 
+ //function in completing
+ 
+ }
+ function deepsend() {
+	document.getElementById("statup").innerHTML = "sending..."; 
+								 	  console.log("sending...");
+	data1 = document.getElementById('name').value;
+    data2 = document.getElementById('course').value;
+    data3 = document.getElementById('phone').value;
+	var datalength = data1.length + data2.length + data3.length;
+	if(datalength >= 48){
+		document.getElementById("statup").innerHTML = "data long"; 
+		alert("DATA long " + datalength + "> 48");
+		return;
+	}
+	if(data1 == ""){
+	alert("No Name");
+	document.getElementById("statup").innerHTML = "No name data"; 
+	return;
+	}
+	if(data2 == ""){
+	alert("No course");
+	document.getElementById("statup").innerHTML = "No course data"; 
+	return;
+	}
+	if(data3 == ""){
+	alert("No phone");
+	document.getElementById("statup").innerHTML = "No phone data"; 
+	return;
+	}
+	if(isNaN(data3)){
+	document.getElementById("statup").innerHTML = "Wrong phone data"; 
+	alert("phone must a number");
+	return;
+	}
+var xhttp = new XMLHttpRequest(); 
+ xhttp.onreadystatechange = function() {
+ if (this.readyState == 4 && this.status == 204){}
+	document.getElementById("statup").innerHTML = "Write False"; 
+	alert("Write False");
+ }
+ if (this.readyState == 4 && this.status == 403){
+
+ }
+ if (this.readyState == 4 && this.status == 200) { 
+
+ }
+ }; 
+ xhttp.open("GET","writedata#tycrd="+atypical+"&name="+data1+"&course="+data2+"&phone="+data3,true); 
+ xhttp.send(); 
+}
+ </script>
+ </head> 
+ <body> 
+ <div> 
+ <p> 
+ <br/> STUDENT ATTENDANCE <br/><br/> 
+ </p>
+ <HR/>  
+ <a href='/home'> HOME </a>  
+ <a href='/write'  class = 'hightlight'> WRITE </a>  
+ <a href='/setup' > SETUP </a>  
+ <HR/> 
+  <h4 style = "color: blue">
+  Startup: 
+	<h5 id="statup">Nowmal</h5>
+  </h4>
+  <HR/> 
+  <h3>
+  One card write <br/>
+  </h3>
+  <form>
+  <table border="1px">
+    <tr>
+        <td>NAME:</td>
+        <td>
+            <input type="text" name="name" id="name"/>
+        </td>
+    </tr>
+    <tr>
+        <td>COURSE:</td>
+        <td>
+            <input type="text" name="course" id="course"/>
+        </td>
+    </tr>
+    <tr>
+        <td>PHONE:</td>
+        <td>
+            <input type="tel" name="phone" id="phone"/>
+        </td>
+    </tr>
+</table></br>
+<input type="button" name="submit" value=" WRITE ! " onclick="deepsend()" />
+<input type="reset">
+</form>
+ </br>
+ <HR/> 
+   <h3>Much card write</h3> 
+   <h6>use the "WRITE.TXT" file in micro sd card to auto write lot of RFID card</h6>
+
+   didnt finist yet
+   
+ <HR/> 
+ <h5>
+EXTEND:
+    <form>
+  + ATYPICAL CARD:</br>
+  <input type="radio" name="gender" onclick="changeatypical(true)" checked>NEWCARD<br>
+  <input type="radio" name="gender" onclick="changeatypical(false)">OLDCARD<br>
+  </form>
+  + LOCK CARD:
+  CAUTION: this is not recommend !!! data in card will be lock forever !!!
+  <button id="demo" type="button" onclick="lockcard()">LOCKCARD</button>
+  </h5>
+  <HR/> 
+ <p class = 'end'> 
+ <br/> 
+ &emsp;All design & code by Cemu<br/> 
+ &emsp;Copyright 2016 
+ <br/><br/> 
+ </p> 
+ </div> 
+ </body> 
+ </html>

@@ -1,0 +1,2 @@
+# prevent display of select file types
+IndexIgnore *.txt
